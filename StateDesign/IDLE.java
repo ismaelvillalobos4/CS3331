@@ -1,30 +1,29 @@
 
-public class Decelerate implements RoverState{
-	
+public class IDLE implements RoverState{
 	RoverMachine roverMachine;
 	
-	public Decelerate(RoverMachine newRoverMachine) {
+	public IDLE(RoverMachine newRoverMachine) {
 		roverMachine = newRoverMachine;
 	}
 
-	//System.out.println("Accelerating Forward");
-	//roverMachine.setRoverState(roverMachine.moveForwardAcc);
-
-	//System.out.println("Nothing Happened!");
 	
 	@Override
 	public void PressRightOne() {
-		System.out.println("Nothing Happened!");
+		System.out.println("Accelerating Forward");
+		roverMachine.setRoverState(roverMachine.moveForwardAcc);
+		
 	}
 
 	@Override
 	public void PressRightTwo() {
 		System.out.println("Nothing Happened!");
+		
 	}
 
 	@Override
 	public void HoldRight6() {
-		System.out.println("Nothing Happened!");
+		System.out.println("Moving Forward Constant");
+		roverMachine.setRoverState(roverMachine.moveForwardCons);
 	}
 
 	@Override
@@ -35,20 +34,23 @@ public class Decelerate implements RoverState{
 
 	@Override
 	public void HoldLeft6() {
-		System.out.println("Nothing Happened!");
+		System.out.println("Accelerating Backward");
+		roverMachine.setRoverState(roverMachine.moveBackAcc);
+		
 	}
 
 	@Override
 	public void LetSpeedZero() {
-		System.out.println("Slowing Down to Speed 0");
-		roverMachine.setRoverState(roverMachine.idle);
-
+		System.out.println("Nothing Happened!");
+		
 	}
 
 	@Override
 	public void LeftRightSame() {
 		System.out.println("Nothing Happened!");
+		
 	}
 
 
+	
 }

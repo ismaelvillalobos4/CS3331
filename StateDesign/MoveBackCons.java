@@ -1,9 +1,8 @@
 
-public class Decelerate implements RoverState{
-	
+public class MoveBackCons implements RoverState {
 	RoverMachine roverMachine;
 	
-	public Decelerate(RoverMachine newRoverMachine) {
+	public MoveBackCons(RoverMachine newRoverMachine) {
 		roverMachine = newRoverMachine;
 	}
 
@@ -14,7 +13,8 @@ public class Decelerate implements RoverState{
 	
 	@Override
 	public void PressRightOne() {
-		System.out.println("Nothing Happened!");
+		System.out.println("Decelerating");
+		roverMachine.setRoverState(roverMachine.decelerate);
 	}
 
 	@Override
@@ -40,15 +40,14 @@ public class Decelerate implements RoverState{
 
 	@Override
 	public void LetSpeedZero() {
-		System.out.println("Slowing Down to Speed 0");
-		roverMachine.setRoverState(roverMachine.idle);
+		System.out.println("Nothing Happened!");
 
 	}
 
 	@Override
 	public void LeftRightSame() {
-		System.out.println("Nothing Happened!");
+		System.out.println("Emergency Stop Activated");
+		roverMachine.setRoverState(roverMachine.idle);
 	}
-
 
 }
